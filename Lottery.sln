@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottery.API", "Lottery.API\Lottery.API.csproj", "{3921981E-ED03-45B4-BC69-35AB82B81A91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottery.Model", "Lottery.Model\Lottery.Model.csproj", "{BB8D97BF-D616-47B7-AA40-5195EF75C3A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAPI", "TestAPI\TestAPI.csproj", "{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{3921981E-ED03-45B4-BC69-35AB82B81A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3921981E-ED03-45B4-BC69-35AB82B81A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3921981E-ED03-45B4-BC69-35AB82B81A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8D97BF-D616-47B7-AA40-5195EF75C3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8D97BF-D616-47B7-AA40-5195EF75C3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8D97BF-D616-47B7-AA40-5195EF75C3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8D97BF-D616-47B7-AA40-5195EF75C3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
