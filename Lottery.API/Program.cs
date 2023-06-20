@@ -10,10 +10,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connectionString = builder.Configuration["LotteryDbConnectionString"];
 builder.Services.AddDbContext<LotteryDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LotteryDbConnectionString")));
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<LotteryDbContext>();
+    context.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
