@@ -19,6 +19,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<LotteryDbContext>();
+    // Migration also creates a DB if needed
+    // TODO Check why if a default price tier can be set for Azure SQL to avoid surprises
     context.Database.Migrate();
 }
 
