@@ -20,5 +20,7 @@ public class LotteryDbContext : DbContext
         // i.e. this is simple, but if we need to aggregate them, it's probably not the best idea
         modelBuilder.Entity<Draw>().Property(d => d.Numbers)
             .HasConversion(LotteryDbUtils.intListConverter, LotteryDbUtils.intListComparer);
+        
+        modelBuilder.Entity<Draw>().HasIndex(d => d.CreatedAt).IsDescending();
     }
 }
