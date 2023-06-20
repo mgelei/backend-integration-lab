@@ -1,6 +1,5 @@
-using Lottery.Model;
-using System.ComponentModel.DataAnnotations;
 using FluentAssertions;
+using Lottery.Model;
 using TestAPI.Common;
 
 namespace TestAPI;
@@ -21,7 +20,7 @@ public class TestDataModel
 
         result.Should().BeTrue();
     }
-    
+
     [Fact]
     public void DrawModel_ShouldCheckIfNumberRangeIsCorrect()
     {
@@ -36,9 +35,8 @@ public class TestDataModel
 
         result.Should().BeTrue();
     }
-    
-    
-    
+
+
     [Fact]
     public void DrawModel_ShouldNotRaiseFalseErrors()
     {
