@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>29522509-3836-4be6-ba4a-4330bf6c22bc</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,6 +21,11 @@
 
     <ItemGroup>
       <Folder Include="Controllers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lottery.DataAccess\Lottery.DataAccess.csproj" />
+      <ProjectReference Include="..\Lottery.Model\Lottery.Model.csproj" />
     </ItemGroup>
 
 </Project>
