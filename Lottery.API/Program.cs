@@ -1,4 +1,5 @@
 using Lottery.DataAccess;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,9 +20,26 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<LotteryDbContext>();
-    // Migration also creates a DB if needed
-    // TODO Check why if a default price tier can be set for Azure SQL to avoid surprises
-    context.Database.Migrate();
+
+    try
+    {
+        if (!context.Database.CanConnect())
+        {
+            throw new ConnectionAbortedException("Cannot connect to the database");
+        }
+        
+        // Migration also creates a DB if needed
+        // TODO Check why if a default price tier can be set for Azure SQL to avoid surprises
+        context.Database.Migrate();
+    }
+    catch (Exception e)
+    {
+        // This is something arbitrary to show an exception being caught,
+        // in real life we would log it and/or do something about it
+        Console.WriteLine(e.Message);
+        Environment.Exit(1);
+    }
+    
 }
 
 // Configure the HTTP request pipeline.
