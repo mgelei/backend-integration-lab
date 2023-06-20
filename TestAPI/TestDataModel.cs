@@ -13,7 +13,7 @@ public class TestDataModel
         var draw = new Draw
         {
             Id = 1,
-            Numbers = new[] { 1, 2, 3, 4, 5, 6 },
+            Numbers = new List<int> { 1, 2, 3, 4, 5, 6 },
             CreatedAt = DateTime.Now
         };
 
@@ -28,7 +28,7 @@ public class TestDataModel
         var draw = new Draw
         {
             Id = 1,
-            Numbers = new[] { 1, 2, 3, 4, 51 },
+            Numbers = new List<int> { 1, 2, 3, 4, 51 },
             CreatedAt = DateTime.Now
         };
 
@@ -45,7 +45,7 @@ public class TestDataModel
         var draw = new Draw
         {
             Id = 1,
-            Numbers = new[] { 1, 2, 3, 4, 5 },
+            Numbers = new List<int> { 1, 2, 3, 4, 5 },
             CreatedAt = DateTime.Now
         };
 
