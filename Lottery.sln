@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottery.Model", "Lottery.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAPI", "TestAPI\TestAPI.csproj", "{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottery.DataAccess", "Lottery.DataAccess\Lottery.DataAccess.csproj", "{44273335-425C-4121-BF5F-BDFB566ED4FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0133CF4E-D164-4D5C-A1F3-8C51C7C49B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44273335-425C-4121-BF5F-BDFB566ED4FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44273335-425C-4121-BF5F-BDFB566ED4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44273335-425C-4121-BF5F-BDFB566ED4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44273335-425C-4121-BF5F-BDFB566ED4FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
