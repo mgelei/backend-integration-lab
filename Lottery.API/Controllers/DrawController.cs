@@ -1,3 +1,4 @@
+using Lottery.API.Repositories;
 using Lottery.DataAccess;
 using Lottery.Model;
 using Lottery.Model.DTO;
@@ -10,32 +11,28 @@ namespace Lottery.API.Controllers;
 [ApiController]
 public class DrawController : ControllerBase
 {
-    private readonly LotteryDbContext _dbContext;
+    private readonly DrawRepository _repo;
 
-    public DrawController(LotteryDbContext dbContext)
+    public DrawController(DrawRepository drawRepo)
     {
-        _dbContext = dbContext;
+        _repo = drawRepo;
     }
 
     // GET: api/Draw
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Draw>>> GetDraws()
     {
-        if (!_dbContext.Draws.Any()) return NotFound();
+        var draws = await _repo.GetDrawsAsync();
+        if (!draws.Any()) return NoContent();
 
-        return await _dbContext.Draws.ToListAsync();
+        return draws;
     }
 
     // POST: api/Draw
     [HttpPost]
     public async Task<ActionResult<DrawPost>> PostDraw(DrawPost draw)
     {
-        _dbContext.Draws.Add(new Draw
-        {
-            Numbers = draw.Numbers,
-            CreatedAt = DateTime.Now
-        });
-        await _dbContext.SaveChangesAsync();
+        await _repo.AddDrawAsync(draw);
 
         return CreatedAtAction("GetDraws", new { }, draw);
     }

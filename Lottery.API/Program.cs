@@ -1,3 +1,4 @@
+using Lottery.API.Repositories;
 using Lottery.DataAccess;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration["LotteryDbConnectionString"];
 builder.Services.AddDbContext<LotteryDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddScoped<DrawRepository>();
 
 var app = builder.Build();
 
