@@ -29,6 +29,7 @@ public class DrawController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<DrawPost>> PostDraw(DrawPost draw)
     {
+        draw.Numbers = draw.Numbers.OrderBy(n => n).ToList();
         await _repo.AddDrawAsync(draw);
 
         return CreatedAtAction("GetDraws", new { }, draw);

@@ -30,7 +30,7 @@ public class DrawRepository
     {
         _dbContext.Draws.Add(new Draw
         {
-            Numbers = draw.Numbers.OrderBy(n => n).ToList(),
+            Numbers = draw.Numbers,
             CreatedAt = DateTime.Now,
             PublicId = Guid.NewGuid()
         });
