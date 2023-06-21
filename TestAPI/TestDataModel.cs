@@ -36,6 +36,21 @@ public class TestDataModel
         result.Should().BeTrue();
     }
 
+    [Fact]
+    public void DrawModel_ShouldCheckIfNumbersAreUnique()
+    {
+        var draw = new Draw
+        {
+            Id = 1,
+            Numbers = new List<int> { 1, 1, 3, 4, 5 },
+            CreatedAt = DateTime.Now
+        };
+
+        var result = ModelValidator.ValidateModel(draw).Any(v => v.MemberNames.Contains("Numbers"));
+
+        result.Should().BeTrue();
+    }
+
 
     [Fact]
     public void DrawModel_ShouldNotRaiseFalseErrors()
