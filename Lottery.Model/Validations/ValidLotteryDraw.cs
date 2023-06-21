@@ -10,6 +10,7 @@ public class ValidLotteryDraw : ValidationAttribute
 
         var numbers = value as List<int>;
         if (numbers!.Count != 5) return false;
+        if (numbers.Distinct().Count() != 5) return false;
 
         return numbers.All(number => number >= 1 && number <= 50);
     }
