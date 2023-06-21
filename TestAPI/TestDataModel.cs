@@ -13,7 +13,8 @@ public class TestDataModel
         {
             Id = 1,
             Numbers = new List<int> { 1, 2, 3, 4, 5, 6 },
-            CreatedAt = DateTime.Now
+            CreatedAt = DateTime.Now,
+            PublicId = Guid.NewGuid()
         };
 
         var result = ModelValidator.ValidateModel(draw).Any(v => v.MemberNames.Contains("Numbers"));
@@ -28,7 +29,8 @@ public class TestDataModel
         {
             Id = 1,
             Numbers = new List<int> { 1, 2, 3, 4, 51 },
-            CreatedAt = DateTime.Now
+            CreatedAt = DateTime.Now,
+            PublicId = Guid.NewGuid()
         };
 
         var result = ModelValidator.ValidateModel(draw).Any(v => v.MemberNames.Contains("Numbers"));
@@ -43,7 +45,8 @@ public class TestDataModel
         {
             Id = 1,
             Numbers = new List<int> { 1, 1, 3, 4, 5 },
-            CreatedAt = DateTime.Now
+            CreatedAt = DateTime.Now,
+            PublicId = Guid.NewGuid()
         };
 
         var result = ModelValidator.ValidateModel(draw).Any(v => v.MemberNames.Contains("Numbers"));
@@ -59,7 +62,8 @@ public class TestDataModel
         {
             Id = 1,
             Numbers = new List<int> { 1, 2, 3, 4, 5 },
-            CreatedAt = DateTime.Now
+            CreatedAt = DateTime.Now,
+            PublicId = Guid.NewGuid()
         };
 
         var result = ModelValidator.ValidateModel(draw).Count == 0;
