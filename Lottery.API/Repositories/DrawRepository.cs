@@ -22,7 +22,7 @@ public class DrawRepository
                 Numbers = d.Numbers,
                 CreatedAt = d.CreatedAt,
                 PublicId = d.PublicId
-            })
+            }).OrderBy(d => d.CreatedAt)
             .ToListAsync();
     }
 
