@@ -19,5 +19,7 @@ public class LotteryDbContext : DbContext
             .HasConversion(LotteryDbUtils.intListConverter, LotteryDbUtils.intListComparer);
 
         modelBuilder.Entity<Draw>().HasIndex(d => d.CreatedAt).IsDescending();
+
+        modelBuilder.Entity<Draw>().HasIndex(d => d.PublicId).IsUnique();
     }
 }

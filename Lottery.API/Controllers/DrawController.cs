@@ -1,9 +1,6 @@
 using Lottery.API.Repositories;
-using Lottery.DataAccess;
-using Lottery.Model;
 using Lottery.Model.DTO;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Lottery.API.Controllers;
 
@@ -20,7 +17,7 @@ public class DrawController : ControllerBase
 
     // GET: api/Draw
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Draw>>> GetDraws()
+    public async Task<ActionResult<IEnumerable<DrawGet>>> GetDraws()
     {
         var draws = await _repo.GetDrawsAsync();
         if (!draws.Any()) return NoContent();
