@@ -26,11 +26,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Lottery.Model\Lottery.Model.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="MockData\" />
+        <ProjectReference Include="..\Lottery.API\Lottery.API.csproj" />
+        <ProjectReference Include="..\Lottery.Model\Lottery.Model.csproj" />
     </ItemGroup>
 
 </Project>

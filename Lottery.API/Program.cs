@@ -1,3 +1,4 @@
+using Lottery.API.Repositories;
 using Lottery.DataAccess;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration["LotteryDbConnectionString"];
 builder.Services.AddDbContext<LotteryDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddScoped<DrawRepository>();
 
 var app = builder.Build();
 
@@ -23,11 +25,8 @@ using (var scope = app.Services.CreateScope())
 
     try
     {
-        if (!context.Database.CanConnect())
-        {
-            throw new ConnectionAbortedException("Cannot connect to the database");
-        }
-        
+        if (!context.Database.CanConnect()) throw new ConnectionAbortedException("Cannot connect to the database");
+
         // Migration also creates a DB if needed
         // TODO Check why if a default price tier can be set for Azure SQL to avoid surprises
         context.Database.Migrate();
@@ -39,7 +38,6 @@ using (var scope = app.Services.CreateScope())
         Console.WriteLine(e.Message);
         Environment.Exit(1);
     }
-    
 }
 
 // Configure the HTTP request pipeline.

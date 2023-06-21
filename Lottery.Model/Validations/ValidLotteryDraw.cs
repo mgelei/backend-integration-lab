@@ -7,7 +7,7 @@ public class ValidLotteryDraw : ValidationAttribute
     public override bool IsValid(object? value)
     {
         if (value == null) return false;
-        
+
         var numbers = value as List<int>;
         if (numbers!.Count != 5) return false;
 
